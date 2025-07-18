@@ -14,6 +14,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 body::before {
     content: '';
@@ -21,6 +22,7 @@ body::before {
     top: 0; left: 0; right: 0; bottom: 0;
     width: 100vw;
     height: 100dvh;
+    min-height: 120vh;
     background: rgba(24,24,24,0.82);
     z-index: 0;
     pointer-events: none;
@@ -28,6 +30,7 @@ body::before {
 @supports not (height: 100dvh) {
     body::before {
         height: 100vh;
+        min-height: 120vh;
     }
 }
 #root, body > * {
@@ -349,7 +352,7 @@ header h1 {
 }
 
 footer {
-    background: #181818;
+    background: rgba(24, 24, 24, 0.92);
     color: #ffe08a;
     text-align: center;
     padding: 18px 0;
@@ -360,6 +363,7 @@ footer {
     width: 100vw;
     left: 0;
     position: relative;
+    z-index: 1;
 }
 
 footer .container {
