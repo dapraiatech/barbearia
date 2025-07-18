@@ -11,13 +11,12 @@ body {
   background-repeat: no-repeat;
   color: #fff;
   min-height: 100vh;
-  position: relative;
   display: flex;
   flex-direction: column;
 }
 body::before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(24,24,24,0.82);
     z-index: 0;
