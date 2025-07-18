@@ -1,19 +1,19 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: 'Montserrat', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #181818;
-    color: #fff;
-    min-height: 100vh;
-    background-image: url('fundo.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background-image: url('fundo2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  /* min-height: 100vh; removido para evitar tarja clara */
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 body::before {
     content: '';
