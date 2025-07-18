@@ -10,6 +10,23 @@
     pointer-events: none;
 }
 
+/* Background fix para mobile */
+.background-fix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    background-image: url('fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #181818;
+    z-index: -1;
+    pointer-events: none;
+}
+
 @supports (height: 100dvh) {
     .overlay {
         height: 100dvh;
@@ -37,6 +54,15 @@ html, body {
         -webkit-background-size: cover !important;
         -moz-background-size: cover !important;
         -o-background-size: cover !important;
+        min-height: 100vh !important;
+        height: auto !important;
+        background-color: #181818 !important;
+    }
+    
+    html {
+        height: 100% !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
     }
 }
 
@@ -48,17 +74,25 @@ body {
     color: #fff;
     min-height: 100vh;
     height: auto;
-    background-image: url('fundo.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow-x: hidden;
+}
+
+/* Fix para o problema da barra de endereço mobile */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        height: auto;
+        background-color: #181818;
+    }
 }
 #root, body > * {
     position: relative;
@@ -488,6 +522,9 @@ footer .container {
         -o-background-size: cover;
         overflow-x: hidden;
         position: relative;
+        min-height: 100vh;
+        height: auto;
+        background-color: #181818;
     }
     
     html {
