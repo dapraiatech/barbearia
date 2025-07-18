@@ -1,4 +1,4 @@
-.overlay {
+/* .overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -8,7 +8,7 @@
     background: rgba(24,24,24,0.6);
     z-index: 0;
     pointer-events: none;
-}
+} */
 
 /* Background fix para mobile */
 .background-fix {
@@ -27,12 +27,12 @@
     pointer-events: none;
 }
 
-@supports (height: 100dvh) {
+/* @supports (height: 100dvh) {
     .overlay {
         height: 100dvh;
         min-height: 100dvh;
     }
-}
+} */
 
 html {
     height: 100%;
