@@ -1,3 +1,27 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    background: rgba(24,24,24,0.6);
+    z-index: 0;
+    pointer-events: none;
+}
+
+@supports (height: 100dvh) {
+    .overlay {
+        height: 100dvh;
+        min-height: 100dvh;
+    }
+}
+
+html {
+    height: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Montserrat', Arial, sans-serif;
     margin: 0;
@@ -9,6 +33,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -16,26 +41,9 @@ body {
     align-items: center;
     overflow-x: hidden;
 }
-body::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    width: 100vw;
-    height: 100dvh;
-    min-height: 120vh;
-    background: rgba(24,24,24,0.82);
-    z-index: 0;
-    pointer-events: none;
-}
-@supports not (height: 100dvh) {
-    body::before {
-        height: 100vh;
-        min-height: 120vh;
-    }
-}
 #root, body > * {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero-content {
@@ -363,7 +371,7 @@ footer {
     width: 100vw;
     left: 0;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 footer .container {
