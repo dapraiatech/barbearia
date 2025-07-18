@@ -1,0 +1,566 @@
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #181818;
+    color: #fff;
+    min-height: 100vh;
+    background: url('fundo.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(24,24,24,0.82);
+    z-index: 0;
+    pointer-events: none;
+}
+#root, body > * {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 320px;
+    gap: 32px;
+}
+.logo-banner {
+    width: 340px;
+    max-width: 90vw;
+    margin-bottom: 18px;
+    animation: logo-zoom-in 1.2s cubic-bezier(.4,0,.2,1);
+    box-shadow: 0 8px 32px #0008, 0 0 0 6px #bfa76a33;
+    border-radius: 18px;
+}
+@keyframes logo-zoom-in {
+    0% { opacity: 0; transform: scale(0.7) translateY(-40px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+.animate-btn {
+    animation: btn-pulse 1.8s infinite alternate;
+    box-shadow: 0 0 0 0 #bfa76a88, 0 4px 16px #0004;
+    position: relative;
+    overflow: hidden;
+}
+@keyframes btn-pulse {
+    0% { box-shadow: 0 0 0 0 #bfa76a88, 0 4px 16px #0004; }
+    100% { box-shadow: 0 0 16px 8px #bfa76a33, 0 4px 16px #0004; }
+}
+.animate-btn::after {
+    content: '';
+    position: absolute;
+    left: -60%;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent 60%, #fffbe6cc 100%);
+    transform: skewX(-20deg);
+    opacity: 0.3;
+    animation: btn-shine 2.5s infinite linear;
+}
+@keyframes btn-shine {
+    0% { left: -60%; }
+    100% { left: 120%; }
+}
+.hero {
+    background: linear-gradient(120deg, #181818 60%, #bfa76a 120%);
+    color: #fff;
+    padding: 32px 0 18px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 260px;
+    box-shadow: 0 8px 32px #0006;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.slogan {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 12px;
+    color: #ffe08a;
+    text-shadow: 0 2px 8px #0008;
+}
+
+.btn-main {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 14px 38px;
+    background: linear-gradient(90deg, #bfa76a 60%, #fffbe6 100%);
+    color: #181818;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 16px #0004;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+.btn-main:hover {
+    background: linear-gradient(90deg, #ffe08a 60%, #bfa76a 100%);
+    color: #181818;
+    transform: scale(1.05);
+}
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(90deg, #25d366 60%, #128c7e 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.15rem;
+    padding: 16px 38px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 16px #0004;
+    text-decoration: none;
+    margin-top: 18px;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.btn-whatsapp i {
+    font-size: 1.5rem;
+}
+.btn-whatsapp:hover {
+    background: linear-gradient(90deg, #128c7e 60%, #25d366 100%);
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 8px 32px #25d36655;
+}
+
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto 35px auto;
+    padding: 0;
+    overflow: visible;
+}
+
+.about h2 {
+    font-size: 2.1rem;
+    margin-bottom: 12px;
+    color: #ffe08a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gallery {
+    margin-bottom: 50px;
+}
+
+.gallery h2 {
+    text-align: center;
+    color: #ffe08a;
+    margin-bottom: 32px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 28px;
+    justify-items: center;
+}
+
+.photo-card {
+    background: #222;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px #0003;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+    max-width: 260px;
+    position: relative;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 2px solid #bfa76a;
+    transition: transform 0.3s;
+}
+
+.photo-card span {
+    display: block;
+    padding: 10px 0 12px 0;
+    color: #ffe08a;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.photo-card:hover {
+    transform: scale(1.04) translateY(-4px);
+    box-shadow: 0 8px 32px #bfa76a55;
+}
+
+.photo-card:hover img {
+    transform: scale(1.07);
+}
+
+.services {
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0 0 18px 0;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: unset;
+}
+
+.services h2 {
+    color: #ffe08a;
+    text-align: center;
+    margin-bottom: 28px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.services-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-card {
+    background: #181818;
+    border: 2px solid #bfa76a;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px #0002;
+    padding: 22px 28px;
+    min-width: 180px;
+    max-width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+    transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+}
+
+.service-card i {
+    color: #ffe08a;
+    font-size: 2rem;
+    margin-bottom: 6px;
+}
+
+.service-card .price {
+    color: #ffe08a;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 6px;
+}
+
+.service-card:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 8px 32px #bfa76a55;
+    border: 2px solid #ffe08a;
+}
+
+.contact {
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0 0 30px 0;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.contact h2 {
+    color: #ffe08a;
+    margin-bottom: 18px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.whatsapp-link {
+    color: #25d366;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.whatsapp-link:hover {
+    color: #128c7e;
+    text-decoration: underline;
+}
+
+footer {
+    background: #181818;
+    color: #ffe08a;
+    text-align: center;
+    padding: 18px 0;
+    font-size: 1rem;
+    margin-top: 30px;
+    letter-spacing: 1px;
+    border-top: 2px solid #bfa76a;
+    width: 100vw;
+    left: 0;
+    position: relative;
+}
+
+footer .container {
+    width: 100%;
+    max-width: unset;
+    margin: 0;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.logo-topo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 38px;
+    margin-bottom: 48px;
+    gap: 28px;
+}
+.logo-topo {
+    width: 320px;
+    max-width: 90vw;
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px #0008, 0 0 0 6px #bfa76a33;
+    animation: logo-zoom-in 1.2s cubic-bezier(.4,0,.2,1);
+}
+
+.about-card {
+    background: rgba(24, 24, 24, 0.92);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px #bfa76a55;
+    padding: 32px 28px 22px 28px;
+    max-width: 700px;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+    will-change: transform;
+    min-height: 240px;
+    transform: scale(1.05) translateY(-3px);
+    border: 2px solid #ffe08a;
+}
+
+.about-card:hover {
+    /* Removido o efeito hover, pois agora é permanente */
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-80px);
+    transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+}
+.slide-in-left.appear {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.about-card p {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: pre-line;
+}
+
+@media (max-width: 900px) {
+    .services-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+    .about h2, .gallery h2, .services h2, .contact h2 {
+        font-size: 1.1rem;
+    }
+    .services {
+        margin-bottom: 18px;
+        min-height: unset;
+        padding-bottom: 10px;
+    }
+    .logo-topo-container {
+        margin-bottom: 18px;
+    }
+    .services, .about, .contact {
+        padding: 14px 4px 12px 4px;
+    }
+    .container {
+        width: 99%;
+    }
+    .service-card {
+        min-width: 44vw;
+        max-width: 98vw;
+        width: 98vw;
+        margin: 0;
+        padding: 28px 6px;
+        font-size: 1.18rem;
+        gap: 10px;
+    }
+    .photo-card {
+        max-width: 70vw;
+        margin: 0 auto;
+    }
+    .photo-card img {
+        height: 70px;
+    }
+    .photo-card span {
+        font-size: 0.85rem;
+        padding: 6px 0 8px 0;
+    }
+    .hero-content {
+        min-height: 180px;
+        gap: 18px;
+    }
+    .hero {
+        padding: 16px 0 8px 0;
+        min-height: 120px;
+    }
+    .hero-content {
+        min-height: 80px;
+        gap: 10px;
+    }
+    .logo-topo {
+        width: 60vw;
+        max-width: 180px;
+        border-radius: 10px;
+    }
+    .logo-topo-container {
+        margin-top: 8px;
+        margin-bottom: 10px;
+        gap: 10px;
+    }
+    .about-card {
+        transform: none;
+        box-shadow: 0 8px 32px #bfa76a55;
+        border: 2px solid #ffe08a;
+        min-height: unset;
+        padding: 10px 4vw 8px 4vw;
+        max-width: 80vw;
+    }
+    .about-card h2 {
+        font-size: 0.92rem;
+    }
+    .about-card p {
+        font-size: 0.72rem;
+        max-width: 80vw;
+    }
+    .gallery h2 {
+        font-size: 0.98rem;
+        margin-bottom: 44px;
+    }
+    .photos {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .photo-card {
+        max-width: 90vw;
+    }
+    .photo-card img {
+        height: 110px;
+    }
+    .service-card {
+        min-width: 90px;
+        max-width: 120px;
+        padding: 8px 4px;
+        font-size: 0.85rem;
+        gap: 4px;
+    }
+    .service-card i {
+        font-size: 1.1rem;
+    }
+    .service-card .price {
+        font-size: 1rem;
+    }
+    .contact {
+        padding: 0;
+        margin-bottom: 18px;
+    }
+    .btn-main, .btn-whatsapp {
+        min-width: unset;
+        max-width: unset;
+        width: unset;
+        font-size: 1rem;
+        padding: 10px 22px;
+        border-radius: 22px;
+    }
+    .services-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 32px;
+        grid-row-gap: 28px;
+        justify-items: center;
+        justify-content: center;
+    }
+}
+

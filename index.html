@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Estilo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <div class="logo-topo-container">
+        <img src="logo.jpeg" alt="Logo Barbearia Estilo" class="logo-topo">
+        <a href="#contato" class="btn-main animate-btn">Agende seu horário</a>
+    </div>
+    <section class="about container fade-in slide-in-left">
+        <div class="about-card">
+            <h2><i class="fa-solid fa-user-tie"></i> Bem-vindo à Barbearia Estilo</h2>
+            <p>Oferecemos cortes modernos, barba, sobrancelha e cuidados especiais
+para você sair sempre no estilo. Ambiente confortável,
+    atendimento profissional e preços acessíveis.</p>
+        </div>
+    </section>
+    <section class="gallery container fade-in">
+        <h2><i class="fa-solid fa-camera-retro"></i> Galeria de Cortes</h2>
+        <div class="photos">
+            <div class="photo-card"><img src="corte1.jpg" alt="Corte 1"><span>Marcado</span></div>
+            <div class="photo-card"><img src="corte2.jpg" alt="Corte 2"><span>Fade</span></div>
+            <div class="photo-card"><img src="corte3.jpg" alt="Corte 3"><span>Degradê</span></div>
+            <div class="photo-card"><img src="corte4.jpg" alt="Corte 4"><span>Hidratação</span></div>
+        </div>
+    </section>
+    <section class="services container fade-in">
+        <h2><i class="fa-solid fa-star"></i> Serviços & Preços</h2>
+        <div class="services-cards">
+            <div class="service-card">
+                <i class="fa-solid fa-user"></i>
+                <span>Corte</span>
+                <span class="price">R$ 35</span>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-user-tie"></i>
+                <span>Barba</span>
+                <span class="price">R$ 25</span>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-scissors"></i>
+                <span>Corte + Barba</span>
+                <span class="price">R$ 55</span>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-eye"></i>
+                <span>Sobrancelha</span>
+                <span class="price">R$ 20</span>
+            </div>
+        </div>
+    </section>
+    <section class="contact container fade-in" id="contato">
+        <h2><i class="fa-solid fa-phone"></i> Contato & Agendamento</h2>
+        <a href="https://wa.me/5599999999999?text=Olá!%20Gostaria%20de%20agendar%20um%20horário%20na%20Barbearia%20Estilo." target="_blank" class="btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Fale conosco no WhatsApp
+        </a>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy;Barbearia Estilo. 📍Rua Brasil, Nº123, Brasil-BR.</p>
+        </div>
+    </footer>
+    <script>
+        // Animação fade-in ao rolar
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.2 };
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('appear');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+        faders.forEach(fader => { appearOnScroll.observe(fader); });
+    </script>
+</body>
+</html>
