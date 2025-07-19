@@ -560,6 +560,9 @@ footer .container {
         padding: 28px 6px;
         font-size: 1.18rem;
         gap: 10px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
     .photo-card {
         max-width: 70vw;
@@ -629,6 +632,9 @@ footer .container {
         padding: 8px 4px;
         font-size: 0.85rem;
         gap: 4px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
     .service-card i {
         font-size: 1.1rem;
